@@ -1,0 +1,11 @@
+# Architecture Overview
+
+*Sticky Notes App - React Application*
+
+---
+
+My sticky notes application uses a straightforward component-based React architecture that keeps things organized and maintainable. The main structure centers around four key components: NoteCanvas acts as the main workspace where users interact with their notes, individual Note components handle their own editing and display logic, the Toolbar manages note creation and customization options, and TrashZone provides an intuitive way to delete notes by dragging them to the bottom of the screen. Each component lives in its own folder alongside its CSS module file, which keeps the styling scoped and makes it easy to find and modify the code for any particular feature.
+
+State management relies on React Context paired with useReducer to keep everything synchronized across the application. The context system handles the flow of data and user actions throughout the app, managing everything from creating new notes to the complex real-time updates that happen during drag operations. This centralized approach means that when you drag a note around the screen, all the visual updates happen smoothly because the state changes are coordinated through a single source of truth. The drag system itself is designed to feel responsive, using movement thresholds to distinguish between simple clicks and actual drag gestures.
+
+The application automatically saves your work using browser local storage, so your notes persist between sessions without any manual saving required. Each note contains all the information needed to recreate it exactly as you left it: its content, position on the screen, size, color, and layer order for when notes overlap. The core functionality is supported by utility functions that handle the mathematical aspects of dragging, resizing, and positioning notes within the canvas boundaries. The resize feature is intentionally simplified to only work from the bottom-right corner, making it predictable and easy to use, while the layering system ensures that the note you're working with always appears on top of the others.
