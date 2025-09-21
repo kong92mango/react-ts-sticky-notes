@@ -1,0 +1,116 @@
+.canvas {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  /* Enhanced cork texture pattern */
+  background: 
+    /* Cork pores - various sizes and opacities */
+    radial-gradient(circle at 15% 25%, rgba(101, 67, 33, 0.4) 1px, transparent 2px),
+    radial-gradient(circle at 85% 15%, rgba(139, 86, 44, 0.3) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 45% 65%, rgba(160, 100, 50, 0.3) 1px, transparent 2px),
+    radial-gradient(circle at 75% 80%, rgba(120, 75, 40, 0.4) 2px, transparent 3px),
+    radial-gradient(circle at 25% 85%, rgba(145, 90, 45, 0.2) 1px, transparent 2px),
+    radial-gradient(circle at 65% 35%, rgba(135, 82, 42, 0.3) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 35% 15%, rgba(155, 95, 48, 0.2) 1px, transparent 2px),
+    radial-gradient(circle at 90% 60%, rgba(125, 78, 41, 0.3) 2px, transparent 3px),
+    radial-gradient(circle at 5% 70%, rgba(142, 85, 43, 0.2) 1px, transparent 2px),
+    radial-gradient(circle at 55% 90%, rgba(148, 88, 46, 0.3) 1.5px, transparent 2.5px),
+    /* Wood grain lines */
+    linear-gradient(95deg, transparent 30%, rgba(101, 67, 33, 0.1) 31%, rgba(101, 67, 33, 0.1) 33%, transparent 34%),
+    linear-gradient(92deg, transparent 45%, rgba(120, 75, 40, 0.1) 46%, rgba(120, 75, 40, 0.1) 47%, transparent 48%),
+    linear-gradient(97deg, transparent 60%, rgba(135, 82, 42, 0.08) 61%, rgba(135, 82, 42, 0.08) 62%, transparent 63%);
+  background-color: #D2B48C;
+  background-size: 
+    80px 60px,
+    100px 75px,
+    65px 85px,
+    90px 70px,
+    75px 95px,
+    110px 80px,
+    85px 65px,
+    95px 110px,
+    70px 90px,
+    105px 75px,
+    200px 200px,
+    250px 250px,
+    180px 180px;
+  background-position:
+    0 0,
+    30px 20px,
+    60px 40px,
+    20px 70px,
+    80px 10px,
+    10px 50px,
+    70px 80px,
+    40px 5px,
+    90px 60px,
+    15px 85px,
+    0 0,
+    50px 0,
+    25px 25px;
+}
+
+.emptyState {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #8B5A2B;
+  max-width: 400px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  border: 3px solid #A0642F;
+  box-shadow: 
+    0 4px 12px rgba(139, 90, 44, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+}
+
+.emptyIcon {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyState h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8B4513;
+}
+
+.emptyState p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #A0522D;
+}
+
+.hint {
+  background: rgba(139, 69, 19, 0.1);
+  border: 2px solid rgba(139, 69, 19, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.9rem;
+  color: #8B4513;
+  margin-top: 1rem !important;
+}
+
+.notesContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+:global(body.dragging) {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+:global(body.dragging *) {
+  cursor: grabbing !important;
+  user-select: none !important;
+}

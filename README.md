@@ -1,46 +1,119 @@
-# Getting Started with Create React App
+# Sticky Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive sticky notes application built with React and TypeScript. Create, organize, and manage your notes with an intuitive drag-and-drop interface.
+
+## Features
+
+### Core Functionality
+- **Create Notes**: Generate sticky notes in multiple colors with auto-numbering
+- **Drag & Drop**: Move notes around the canvas by dragging the header
+- **Resize Notes**: Drag the bottom-right corner to resize notes
+- **Delete Notes**: Drag notes to the bottom trash zone to delete them
+- **Local Storage**: All notes are automatically saved and persist between sessions
+- **Color Selection**: Choose from 8 predefined colors for your notes
+
+### User Interface
+- **Clean Design**: Cork board background with realistic note shadows
+- **Real-time Feedback**: Visual indicators for drag, resize, and delete operations
+- **Responsive Layout**: Works on desktop and touch devices
+- **Empty State**: Helpful instructions when no notes exist
+- **Confirmation Dialogs**: Prevents accidental deletion of all notes
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+ 
+- npm
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd sticky-notes-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   # Using npm
+   npm install
+   ```
+
+### Running the Application
+
+**Development Mode**
+```bash
+# Using npm
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+**Production Build**
+```bash
+# Using npm
+npm run build
+```
+
+## How to Use
+
+1. **Creating Notes**: Click the "Add Note" button in the toolbar
+2. **Changing Colors**: Click the color picker to select a different color before creating a note
+3. **Moving Notes**: Click and drag the note header to move notes around
+4. **Resizing Notes**: Click and drag the bottom-right corner to resize
+5. **Editing Content**: Click inside a note to start typing
+6. **Deleting Notes**: Drag a note to the red trash zone at the bottom
+7. **Clear All**: Use the "Clear All Notes" button to delete all notes (with confirmation)
+
+## Technical Details
+
+### Technologies Used
+- **React 18** with TypeScript
+- **CSS Modules** for component styling
+- **Context API** for state management
+- **Heroicons** for UI icons
+- **Local Storage API** for data persistence
+
+### Project Structure
+```
+src/
+├── components/
+│   ├── Note/           # Individual note component
+│   ├── NoteCanvas/     # Main canvas container
+│   ├── Toolbar/        # Top navigation bar
+│   └── TrashZone/      # Deletion area
+├── context/            # React context for state management
+├── hooks/              # Custom React hooks
+├── types/              # TypeScript type definitions
+└── utils/              # Helper functions and constants
+```
+
+### Key Features Implementation
+- **Drag System**: Uses mouse/touch events with offset calculations for smooth dragging
+- **Resize Logic**: Bottom-right corner only, maintains square aspect ratio
+- **Change Layering Logic**: Fuction to bring most recently clicked on note to front, on top of other notes
+- **Position Management**: Top-left corner reference point for consistent positioning
+- **State Persistence**: Automatic saving to localStorage with versioning
+- **Delete Zone**: Dynamic trash area that appears during drag operations
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `start` - Runs development server
+- `build` - Creates production build
+- `test` - Runs test suite
+- `eject` - Ejects from Create React App (one-way operation)
 
-### `yarn start`
+## Browser Support
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Modern browsers with ES6+ support including:
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Contributing
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to submit issues and enhancement requests. The codebase uses:
+- TypeScript for type safety
+- ESLint for code quality
+- Prettier for code formatting
