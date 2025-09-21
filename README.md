@@ -29,7 +29,7 @@ A modern, interactive sticky notes application built with React and TypeScript. 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:kong92mango/react-ts-sticky-notes.git
    cd sticky-notes-app
    ```
 
